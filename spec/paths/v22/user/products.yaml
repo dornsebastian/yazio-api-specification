@@ -3,9 +3,16 @@ post:
   - Products
   operationId: createUserProduct
   summary: Create a user product
+  description: >-
+    The `id` is chosen by the client and can never be reused: posting an id that
+    was used before answers 409, even after the product was deleted with
+    DELETE /v22/user/products/{id}.
   responses:
     '204':
       description: Created
+      content: {}
+    '409':
+      description: The id is already taken, or was used by a deleted product
       content: {}
   requestBody:
     content:

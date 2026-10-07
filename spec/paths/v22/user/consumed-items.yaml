@@ -36,6 +36,9 @@ delete:
   - Diary
   operationId: deleteConsumedItem
   summary: Remove one logged entry
+  description: >-
+    The body names the entry by bucket and id, and every bucket works. The `id`
+    query parameter has no effect.
   responses:
     '204':
       description: Removed

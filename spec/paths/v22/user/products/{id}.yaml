@@ -3,6 +3,10 @@ delete:
   - Products
   operationId: deleteUserProduct
   summary: Delete one of the user's products
+  description: >-
+    A soft delete. The product stays readable with `is_deleted: true` and
+    `is_private` flipped to `false`, and its id cannot be used for a new
+    product.
   responses:
     '204':
       description: Removed

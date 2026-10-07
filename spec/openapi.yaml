@@ -29,6 +29,11 @@ info:
     YAZIO/26.30.1 (com.yazio.ios.YAZIO; build:2607271240; iOS 27.0.0) Ktor
     ```
 
+    The check depends on the API version in the path. Without the app's
+    User-Agent, writes only work against /v15 to /v19; /v20 to /v22 answer
+    `403 version_blocked` and /v23 and later answer `410`. With the app's
+    User-Agent, /v20 and later are usable.
+
     It will need bumping whenever YAZIO retires that app version; a sudden wall
     of 403s from everywhere but `/v22/oauth/token` is the symptom.
 
